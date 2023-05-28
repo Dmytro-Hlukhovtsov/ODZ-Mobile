@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filmImage">
+
+        <TextView
+            android:id="@+id/filmTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:text="Title"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_wrapBehaviorInParent="vertical_only" />
+
+        <TextView
+            android:id="@+id/filmYear"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="2023"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/filmTitle"
+            app:layout_constraintTop_toBottomOf="@+id/filmTitle" />
+
+        <TextView
+            android:id="@+id/filmRate"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="9.0"
+            android:textColor="#FF9800"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/filmYear"
+            app:layout_constraintTop_toTopOf="@+id/filmYear" />
+
+        <TextView
+            android:id="@+id/filmGenres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:maxHeight="100dp"
+            android:text="Action"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.005"
+            app:layout_constraintStart_toStartOf="@+id/filmYear"
+            app:layout_constraintTop_toBottomOf="@+id/filmYear" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/filmImage"
+        android:layout_width="120dp"
+        android:layout_height="170dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="232dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/addToLibBtn"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="21dp"
+        android:background="@color/colorLibBtnAdd"
+        android:padding="10dp"
+        android:text="Add to Library"
+        android:textColor="@color/colorTxtLibBtnAdd"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/filmImage"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
