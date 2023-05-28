@@ -8,21 +8,16 @@ import com.example.odz.db.AppDatabase;
 import com.example.odz.db.dao.FilmDAO;
 import com.example.odz.db.entities.Film;
 import com.example.odz.models.FilmItem;
+import com.example.odz.models.FilterModel;
 import com.example.odz.models.SearchModel;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
-import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 
@@ -71,22 +66,24 @@ public class FilmsRepository {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    /**
-     * Loading film details entity fro
-     *
-     * @param imdbId imdbId for the search
-     * @return Flowable film entity
-     * <p>
-     * public Flowable<Film> loadFilmByImdbId(String imdbId) {
-     * return filmDao.loadFilmbyId(imdbId);
-     * }
-     */
-
 
 
     @SuppressLint("CheckResult")
-    public Observable<List<FilmItem>> getFilmList() {
-        Observable<SearchModel> apiAllFilms = filmAPI.getShortFilmsDescription("top_rated_250", 10, "base_info");
+    public Observable<List<FilmItem>> getFilmList(FilterModel filterModel) {
+        Observable<SearchModel> apiAllFilms;
+        if(filterModel != null){
+
+            if(filterModel.getTitle() != null){
+                apiAllFilms = filmAPI.getFilmsListByTitle(filterModel.getTitle(), "false", "base_info", 25, filterModel.getStartYear(), filterModel.getEndYear(), filterModel.getGenre());
+                Log.i("Title of Film", filterModel.getTitle());
+            }
+            else{
+                apiAllFilms = filmAPI.getFilmsList("top_rated_250", 25, "base_info", filterModel.getGenre(), filterModel.getStartYear(), filterModel.getEndYear());
+            }
+        }
+        else{
+            apiAllFilms = filmAPI.getFilmsList("top_rated_250", 25, "base_info", null, null, null);
+        }
 
         return apiAllFilms.flatMap(searchModel ->
                 loadFilms(null)
@@ -114,5 +111,7 @@ public class FilmsRepository {
     public long insertFilm(Film film) {
         return filmDao.insertFilm(film);
     }
+
+    public void deleteFilm(Film film) { filmDao.deleteFilm(film); }
 
 }

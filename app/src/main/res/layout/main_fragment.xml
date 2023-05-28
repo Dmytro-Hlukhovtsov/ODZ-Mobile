@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0C008C7E"
     android:orientation="vertical"
     tools:context=".fragments.FilmListFragment">
-
     <Button
         android:id="@+id/searchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get 25 most rated movies" />
+        android:text="Get movies" />
 
     <Button
         android:id="@+id/showFilters"
@@ -24,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:visibility="invisible">
+        android:padding="15dp"
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/textView"
@@ -51,7 +52,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/filmGenre"
+            android:id="@+id/filterFilmGenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -70,12 +71,12 @@
                 android:text="Start Year"
                 android:textColor="#2C2C2C"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/startYear"
-                app:layout_constraintStart_toStartOf="@+id/startYear"
+                app:layout_constraintEnd_toEndOf="@+id/filterStartYear"
+                app:layout_constraintStart_toStartOf="@+id/filterStartYear"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/startYear"
+                android:id="@+id/filterStartYear"
                 android:layout_width="127dp"
                 android:layout_height="55dp"
                 android:layout_marginStart="44dp"
@@ -91,12 +92,12 @@
                 android:text="End Year"
                 android:textColor="#2C2C2C"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/endYear"
-                app:layout_constraintStart_toStartOf="@+id/endYear"
+                app:layout_constraintEnd_toEndOf="@+id/filterEndYear"
+                app:layout_constraintStart_toStartOf="@+id/filterEndYear"
                 app:layout_constraintTop_toTopOf="@+id/textView3" />
 
             <Spinner
-                android:id="@+id/endYear"
+                android:id="@+id/filterEndYear"
                 android:layout_width="127dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="9dp"
@@ -105,6 +106,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/applyFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="apply filters" />
 
     </LinearLayout>
 

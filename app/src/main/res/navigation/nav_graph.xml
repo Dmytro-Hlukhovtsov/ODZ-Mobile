@@ -11,7 +11,24 @@
         tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
              />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.odz.fragments.SingleFilmFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/film_details_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.odz.fragments.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/library_fragment">
+        <action
+            android:id="@+id/action_libraryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            />
     </fragment>
 
 </navigation>

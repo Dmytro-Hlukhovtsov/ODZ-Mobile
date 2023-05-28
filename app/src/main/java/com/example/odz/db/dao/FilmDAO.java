@@ -30,13 +30,6 @@ public interface  FilmDAO {
     @Query("SELECT * FROM films WHERE title LIKE :keyword")
     Flowable<List<Film>> loadAllFilmsWithKeyword(String keyword);
 
-    /**
-     * Selecting film by imdbId
-     * @param id it;s id for the search
-     * @return Flowable Film entity
-     */
-    @Query("SELECT * FROM films WHERE imdbId LIKE :id")
-    Flowable<Film> loadFilmbyId(String id);
 
     @Query("SELECT count(*) FROM films WHERE imdbId LIKE :id")
     int checkFilmById(String id);
@@ -59,19 +52,7 @@ public interface  FilmDAO {
     @Delete
     void deleteFilm(Film film);
 
-    /**
-     * Updating films in database
-     * @param films for update
-     */
-    @Update
-    void updateFilms(List<Film> films);
 
-    /**
-     * Updating film in database
-     * @param film for update
-     */
-    @Update
-    void updateFilm(Film film);
 
 
 

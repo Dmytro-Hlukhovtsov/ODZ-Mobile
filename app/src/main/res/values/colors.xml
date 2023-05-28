@@ -12,5 +12,7 @@
     <color name="colorAccent">#AC009B</color>
     <color name="colorLibBtnAdd">#00877A</color>
     <color name="colorTxtLibBtnAdd">#EBFFF9</color>
-    <color name="colorLibBtnDelete">#FF580A</color>
+    <color name="color_lib_btn_in_db">#FF580A</color>
+    <color name="color_lib_btn_to_remove">#EBFF5D51</color>
+
 </resources>

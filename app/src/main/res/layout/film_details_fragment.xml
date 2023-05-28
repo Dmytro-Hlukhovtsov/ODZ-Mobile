@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0C008C7E">
 
+    <ImageView
+        android:id="@+id/descImage"
+        android:layout_width="150dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/descTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toEndOf="@+id/descImage"
+        app:layout_constraintTop_toTopOf="@+id/descImage" />
+
+    <TextView
+        android:id="@+id/descDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/descTitle"
+        app:layout_constraintTop_toBottomOf="@+id/descTitle" />
+
+    <TextView
+        android:id="@+id/descYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/descDuration"
+        app:layout_constraintTop_toBottomOf="@+id/descDuration" />
+
+    <TextView
+        android:id="@+id/descRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="#FF9800"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/descImage"
+        app:layout_constraintStart_toStartOf="@+id/descImage"
+        app:layout_constraintTop_toBottomOf="@+id/descImage" />
+
+    <TextView
+        android:id="@+id/descGenres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/descYear"
+        app:layout_constraintTop_toBottomOf="@+id/descYear" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Description"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/descGenres"
+        app:layout_constraintTop_toBottomOf="@+id/descGenres" />
+
+    <TextView
+        android:id="@+id/descPlot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Film Information"
+        android:textColor="#003C5C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/descImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addToLib"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorLibBtnAdd"
+        android:text="Add To Library"
+        android:textColor="@color/colorTxtLibBtnAdd"
+        app:layout_constraintEnd_toEndOf="@+id/descImage"
+        app:layout_constraintStart_toStartOf="@+id/descImage"
+        app:layout_constraintTop_toBottomOf="@+id/descRate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

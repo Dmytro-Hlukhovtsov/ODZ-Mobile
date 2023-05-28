@@ -53,7 +53,10 @@ public class FilmItem {
     }
 
     public String getPrimaryImage() {
-        return primaryImage.getUrl();
+        if(primaryImage != null){
+            return primaryImage.getUrl();
+        }
+        return null;
     }
 
     public void setPrimaryImage(FilmImage primaryImage) {
@@ -61,7 +64,10 @@ public class FilmItem {
     }
 
     public String getGenres() {
-        return genres.getGenres();
+        if(genres != null){
+            return genres.getGenres();
+        }
+        return "";
     }
 
     public void setGenres(Genres genres) {
@@ -77,7 +83,10 @@ public class FilmItem {
     }
 
     public String getReleaseYear() {
-        return String.valueOf(releaseYear.getYear());
+        if(releaseYear != null){
+            return String.valueOf(releaseYear.getYear());
+        }
+        return "Unknown Year";
     }
 
     public void setReleaseYear(ReleaseYear releaseYear) {
@@ -85,7 +94,10 @@ public class FilmItem {
     }
 
     public String getRuntime() {
-        return runtime.getFormattedTime();
+        if(runtime != null){
+            return runtime.getFormattedTime();
+        }
+        return "";
     }
 
     public void setRuntime(Runtime runtime) {
