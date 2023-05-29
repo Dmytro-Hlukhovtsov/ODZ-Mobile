@@ -12,7 +12,6 @@ import retrofit2.http.Query;
 
 
 public interface FilmAPI {
-    String API_KEY = "?apikey=67c8e857";
 
 
 
@@ -36,17 +35,5 @@ public interface FilmAPI {
             @Query("endYear") String endYear,
             @Query("genre") String genre)
             ;
-
-
-    /**
-     * Getting full film description by imdbID
-     * @param imdbID id for the search
-     * @return FilmItem
-     */
-    @GET(API_KEY)
-    Observable<FilmItem> getLongFilmDescription(@Query("i") String imdbID);
-
-
-
 
 }

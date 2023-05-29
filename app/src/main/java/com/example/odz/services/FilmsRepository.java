@@ -68,7 +68,7 @@ public class FilmsRepository {
 
 
 
-    @SuppressLint("CheckResult")
+
     public Observable<List<FilmItem>> getFilmList(FilterModel filterModel) {
         Observable<SearchModel> apiAllFilms;
         if(filterModel != null){
@@ -78,11 +78,11 @@ public class FilmsRepository {
                 Log.i("Title of Film", filterModel.getTitle());
             }
             else{
-                apiAllFilms = filmAPI.getFilmsList("top_rated_250", 25, "base_info", filterModel.getGenre(), filterModel.getStartYear(), filterModel.getEndYear());
+                apiAllFilms = filmAPI.getFilmsList("most_pop_movies", 25, "base_info", filterModel.getGenre(), filterModel.getStartYear(), filterModel.getEndYear());
             }
         }
         else{
-            apiAllFilms = filmAPI.getFilmsList("top_rated_250", 25, "base_info", null, null, null);
+            apiAllFilms = filmAPI.getFilmsList("most_pop_movies", 25, "base_info", null, null, null);
         }
 
         return apiAllFilms.flatMap(searchModel ->
